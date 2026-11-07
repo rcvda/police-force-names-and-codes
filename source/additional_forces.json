@@ -1,0 +1,13 @@
+[
+ {
+  "id": "police-scotland",
+  "name": "Police Scotland",
+  "area": "Scotland"
+ },
+ {
+  "id": "british-transport",
+  "name": "British Transport Police",
+  "area": "British Transport",
+  "non_territorial": true
+ }
+]
