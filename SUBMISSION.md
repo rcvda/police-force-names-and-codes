@@ -6,7 +6,7 @@ Draft PROPOSAL for adding the `GB-POL` list to org-id.guide. Submit as a PROPOSA
 
 - **List code:** `GB-POL`
 - **Name:** UK Police Forces (RCVDA register)
-- **Description:** Canonical identifiers for UK police forces (the 43 England & Wales territorial forces, Police Scotland, PSNI, and UK-wide non-territorial forces). RCVDA mints a code where a force has no usable existing identifier; forces that already hold one are referenced to it.
+- **Description:** Identifiers for UK police forces (the 43 England & Wales territorial forces, Police Scotland, PSNI, and UK-wide non-territorial forces). RCVDA mints a code where a force has no usable existing identifier; forces that already hold one are referenced to it.
 - **Geographic coverage:** GB (ISO 3166 — the United Kingdom, incl. Northern Ireland)
 - **Legal structure:** Statutory body / corporation sole
 - **Sector:** Policing

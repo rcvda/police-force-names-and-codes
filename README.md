@@ -1,6 +1,6 @@
 # UK Police Forces — Names and Codes (GB-POL)
 
-An open, coded register of **UK police forces** — the 43 territorial forces of England & Wales, Police Scotland, the Police Service of Northern Ireland, and the UK-wide non-territorial forces — with a canonical RCVDA identifier for each body that has no usable identifier of its own.
+An open, coded register of **UK police forces** — the 43 territorial forces of England & Wales, Police Scotland, the Police Service of Northern Ireland, and the UK-wide non-territorial forces — with an identifier for each body that has no usable identifier of its own.
 
 > **Status: work in progress.** The `GB-POL` scheme is **not yet registered** with [org-id.guide](https://org-id.guide). See [Roadmap](#roadmap).
 
@@ -55,6 +55,6 @@ Open Government Licence v3.0 — see [LICENSE](LICENSE).
 
 Note: the January 2026 police reform White Paper ("From local to national") proposes merging forces into ~12 regional bodies and creating a National Police Service. If enacted, superseded forces will be retired (code kept, status updated) and new bodies minted or referenced; nothing is renumbered.
 
-## Maintainer
+## Author and maintainer
 
-Redcar & Cleveland Voluntary Development Agency (RCVDA). Corrections welcome via issues/PRs.
+Created and maintained by Peter Neal at Redcar & Cleveland Voluntary Development Agency (RCVDA). Corrections welcome via issues/PRs.

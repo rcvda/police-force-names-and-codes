@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: UK Police Forces — Names and Codes (GB-POL)
+message: If you use this register, please cite it as below.
+type: dataset
+authors:
+  - family-names: Neal
+    given-names: Peter
+    affiliation: Redcar & Cleveland Voluntary Development Agency (RCVDA)
+    orcid: https://orcid.org/0009-0005-8101-5785
+repository-code: https://github.com/rcvda/police-force-names-and-codes
+license: OGL-UK-3.0
+date-released: 2026-11-08
