@@ -9,5 +9,11 @@
   "name": "British Transport Police",
   "area": "British Transport",
   "non_territorial": true
+ },
+ {
+  "id": "civil-nuclear",
+  "name": "Civil Nuclear Constabulary",
+  "area": "Civil Nuclear",
+  "non_territorial": true
  }
 ]

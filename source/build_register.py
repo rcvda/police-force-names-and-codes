@@ -45,6 +45,7 @@ SPECIAL = {
  "north-yorkshire":("York and North Yorkshire Combined Authority",False,"Mayor of York and North Yorkshire","GB-UKLA-YNYC"),
  "northern-ireland":("Northern Ireland Policing Board",False,"NI Policing Board / Department of Justice","GB-GOR-OT649"),
  "police-scotland":("Scottish Police Authority",True,"Scottish Police Authority",""),
+ "civil-nuclear":("Civil Nuclear Police Authority",False,"Civil Nuclear Police Authority","GB-GOR-PB194"),
 }
 NO_OPCC = {"british-transport"}
 
@@ -76,7 +77,10 @@ for f in ordered:
         opcc_id = (assign.get(fid,{}).get("gb_opcc","") if mint else ext_id)
         fholder = holder
         fpaired = opcc_id or "(see paired OPCC row)"
-        if fid == "police-scotland":
+        if f.get("non_territorial") or pol_ref:
+            fevid = f"{fname}; existing identifier {pol_id}; non-territorial GB-wide force."
+            fnote = f"Referenced, not minted: holds {pol_id}. Oversight: {opcc_name} ({opcc_id})."
+        elif fid == "police-scotland":
             fevid = f"Territorial national force for Scotland (Police Scotland, since 2013). ONS PFA {code} (Dec 2025)."
             fnote = "Scotland jurisdiction; single national force."
         else:
@@ -94,7 +98,7 @@ for f in ordered:
         oevid = f"PCC/OPCC for {area}; no charity/company/GB-GOR registration; keyed by RCVDA. ONS PFA {code} (Dec 2025)."
     else:
         onote = f"NOT minted: PCC function held by {opcc_name}, an existing identifiable body; keyed to its own ID {opcc_id}."
-        oevid = f"PCC function for {area} held by {holder}; keyed to {opcc_name} ({opcc_id}). ONS PFA {code} (Dec 2025)."
+        oevid = f"Police governance for {area} held by {holder}; keyed to {opcc_name} ({opcc_id})."+((" ONS PFA "+code+" (Dec 2025).") if code else "")
     opcc_rows.append([opcc_id, opcc_name, "opcc", area, code, pol_id, holder, "Active", "RCVDA", TODAY, oevid, onote])
 
 out_rows = force_rows if SCHEME == "force" else opcc_rows
