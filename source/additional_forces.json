@@ -15,5 +15,11 @@
   "name": "Civil Nuclear Constabulary",
   "area": "Civil Nuclear",
   "non_territorial": true
+ },
+ {
+  "id": "mod-police",
+  "name": "Ministry of Defence Police",
+  "area": "Ministry of Defence",
+  "non_territorial": true
  }
 ]

@@ -40,6 +40,8 @@ SPECIAL = {
  "civil-nuclear":("Civil Nuclear Police Authority",False,"Civil Nuclear Police Authority","GB-GOR-PB194"),
  "british-transport":("British Transport Police Authority",False,"British Transport Police Authority","GB-GOR-PB461"),
 }
+NO_OPCC = {"mod-police"}
+NO_OPCC_OVERSIGHT = {"mod-police":"Ministry of Defence / MoD Police Committee (not an OPCC; former agency GB-GOR-EA693 removed 2013)"}
 HDR = ["org_id","name","body_type","police_force_area","ons_police_force_area_code","paired_id",
        "pcc_function_held_by","status","issued_by","date_issued","evidence","notes"]
 
@@ -52,24 +54,29 @@ for f in ordered:
     code = "" if f.get("non_territorial") else pfa_code(area)
     pol_id = assign.get(fid,{}).get("gb_pol","")
     pol_ref = not pol_id.startswith("GB-POL-")
-    opcc_name, mint, holder, ext_id = SPECIAL.get(fid,
-        (f"Office of the Police and Crime Commissioner for {area}", True, "Police and Crime Commissioner", ""))
-    opcc_id = (assign.get(fid,{}).get("gb_opcc","") if mint else ext_id)
-    fpaired = opcc_id or "(see paired OPCC row)"
+    no_opcc = fid in NO_OPCC
+    if no_opcc:
+        opcc_name=None; mint=True; holder="Ministry of Defence / MoD Police Committee"; ext_id=""
+    else:
+        opcc_name, mint, holder, ext_id = SPECIAL.get(fid,
+            (f"Office of the Police and Crime Commissioner for {area}", True, "Police and Crime Commissioner", ""))
+    opcc_id = "" if no_opcc else (assign.get(fid,{}).get("gb_opcc","") if mint else ext_id)
+    oversight = NO_OPCC_OVERSIGHT[fid] if no_opcc else f"{opcc_name} ({opcc_id})"
+    fpaired = f"(oversight: {oversight})" if no_opcc else (opcc_id or "(see paired OPCC row)")
     if pol_ref:
         fevid = f"{fname}; existing identifier {pol_id}." + ((" ONS PFA "+code+" (Dec 2025).") if code else " Non-territorial GB-wide force.")
-        fnote = f"Referenced, not minted: holds {pol_id}. Oversight: {opcc_name} ({opcc_id})."
+        fnote = f"Referenced, not minted: holds {pol_id}. Oversight: {oversight}."
     elif f.get("non_territorial"):
         fevid = f"Non-territorial GB-wide police force. RCVDA-minted {pol_id} (no separate register identity; genuine gap)."
-        fnote = f"RCVDA-minted: non-territorial force. Oversight: {opcc_name} ({opcc_id})."
+        fnote = f"RCVDA-minted: non-territorial force. Oversight: {oversight}."
     elif fid == "police-scotland":
         fevid = f"Territorial national force for Scotland (Police Scotland, since 2013). ONS PFA {code} (Dec 2025)."
         fnote = "Scotland jurisdiction; single national force."
     else:
         fevid = f"Territorial police force (police.uk /forces, authoritative). ONS PFA {code} (Dec 2025)."
-        fnote = "PSNI = Northern Ireland jurisdiction" if fid=="northern-ireland" else ""
+        fnote = ""
     force_rows.append([pol_id, fname, "force", area, code, fpaired, holder, "Active", "RCVDA", TODAY, fevid, fnote])
-
+    if no_opcc: continue
     if mint:
         if fid=="metropolitan":
             onote="RCVDA-minted: London OPCC-equivalent (MOPAC), corporation sole, no register ID (genuine gap)."
