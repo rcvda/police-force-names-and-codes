@@ -28,7 +28,7 @@ norfolk,GB-POL-00026,GB-OPCC-00024
 north-wales,GB-POL-00027,GB-OPCC-00025
 north-yorkshire,GB-POL-00028,
 northamptonshire,GB-POL-00029,GB-OPCC-00026
-northern-ireland,GB-POL-00030,
+northern-ireland,GB-GOR-OT657,
 northumbria,GB-POL-00031,GB-OPCC-00027
 nottinghamshire,GB-POL-00032,GB-OPCC-00028
 south-wales,GB-POL-00033,GB-OPCC-00029
@@ -46,3 +46,4 @@ wiltshire,GB-POL-00044,GB-OPCC-00038
 police-scotland,GB-POL-00045,GB-OPCC-00039
 british-transport,GB-POL-00046,
 civil-nuclear,GB-GOR-OT1063,
+_withdrawn_GB-POL-00030,GB-POL-00030,

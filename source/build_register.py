@@ -57,7 +57,7 @@ for f in ordered:
     opcc_id = (assign.get(fid,{}).get("gb_opcc","") if mint else ext_id)
     fpaired = opcc_id or "(see paired OPCC row)"
     if pol_ref:
-        fevid = f"{fname}; existing identifier {pol_id}; non-territorial GB-wide force."
+        fevid = f"{fname}; existing identifier {pol_id}." + ((" ONS PFA "+code+" (Dec 2025).") if code else " Non-territorial GB-wide force.")
         fnote = f"Referenced, not minted: holds {pol_id}. Oversight: {opcc_name} ({opcc_id})."
     elif f.get("non_territorial"):
         fevid = f"Non-territorial GB-wide police force. RCVDA-minted {pol_id} (no separate register identity; genuine gap)."
