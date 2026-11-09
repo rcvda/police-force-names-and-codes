@@ -1,5 +1,7 @@
 # UK Police Forces — Names and Codes (GB-POL)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24063717.svg)](https://doi.org/10.5281/zenodo.24063717)
+
 An open, coded register of **UK police forces** — the 43 territorial forces of England & Wales, Police Scotland, the Police Service of Northern Ireland, and the UK-wide non-territorial forces — with an identifier for each body that has no usable identifier of its own.
 
 > **Status: work in progress.** The `GB-POL` scheme is **not yet registered** with [org-id.guide](https://org-id.guide). See [Roadmap](#roadmap).
