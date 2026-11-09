@@ -9,4 +9,17 @@ authors:
     orcid: https://orcid.org/0009-0005-8101-5785
 repository-code: https://github.com/rcvda/police-force-names-and-codes
 license: OGL-UK-3.0
+doi: 10.5281/zenodo.24063717
 date-released: 2026-11-08
+preferred-citation:
+  type: dataset
+  title: UK Police Forces — Names and Codes (GB-POL)
+  authors:
+    - family-names: Neal
+      given-names: Peter
+      orcid: https://orcid.org/0009-0005-8101-5785
+  publisher:
+    name: Redcar & Cleveland Voluntary Development Agency (RCVDA)
+  doi: 10.5281/zenodo.24063717
+  year: 2026
+  url: https://github.com/rcvda/police-force-names-and-codes
